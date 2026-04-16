@@ -21,5 +21,5 @@ module.exports = (req, res) => {
 
   const url = `${process.env.APP_URL}/api/offer?t=${token}`;
 
-  return res.status(200).json({ url });
+  return res.status(200).send(url);
 };
