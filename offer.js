@@ -27,8 +27,8 @@ module.exports = (req, res) => {
   const diff = Date.now() - timestamp;
   const maxMs = HOURS_VALID * 60 * 60 * 1000;
 
-  if (diff > maxMs) return res.status(200).send(expiredPage());
-
+if (diff > maxMs) return res.redirect(302, 'https://www.nicolasdequiedt.com/offre-expiree');
+  
   // Tout est bon → redirige vers Podia avec le coupon
   return res.redirect(302, process.env.COUPON_URL);
 };
